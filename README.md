@@ -8,9 +8,9 @@ Definition file : [cluster-deployment.yml]()
 
 Above definition file will deploy the following clusters.
 
-| Cluster    | Version           |
-| :-------------: |:-------------:| 
-| Spark     | 1.5.1 | 
-| Flink      | 0.10.1      |  
-| Hadoop | 2.7.1      | 
+| Cluster   | Version |
+| :-------: |:-------:| 
+| Spark     | 1.5.1   | 
+| Flink     | 0.10.1  |  
+| Hadoop    | 2.7.1   | 
 
