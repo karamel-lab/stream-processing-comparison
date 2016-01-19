@@ -1,0 +1,26 @@
+name: StreamingExperiment
+baremetal:
+  ips: [
+    ]
+  sudoPassword: ''
+  username: ubuntu
+cookbooks:
+  streamingExperiment:
+    branch: master
+    github: ashansa/yahoo-streaming-experiment
+attrs:
+  streamingExperiment:
+    user: ubuntu
+    group: ubuntu
+groups:
+  datanodes:
+    size: 1
+    baremetal:
+      ips:
+      - 54.185.136.141
+      sudoPassword: ''
+    recipes:
+    - streamingExperiment::experiment
+    - streamingExperiment::setup
+    - streamingExperiment::testFlink
+    - streamingExperiment::testSpark
