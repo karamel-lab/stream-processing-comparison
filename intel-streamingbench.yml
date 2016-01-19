@@ -1,0 +1,26 @@
+name: HiBench
+baremetal:
+  ips: [
+    ]
+  sudoPassword: ''
+  username: vagrant
+cookbooks:
+  hibench:
+    branch: master
+    github: ashansa/hibench
+attrs:
+  hibench:
+    group: vagrant
+    user: vagrant
+groups:
+  datanodes:
+    size: 1
+    baremetal:
+      ips:
+      - 172.28.128.7
+      sudoPassword: ''
+    attrs: {
+      }
+    recipes:
+    - hibench::experiment
+    - hibench::gendata
