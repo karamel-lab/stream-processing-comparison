@@ -1,0 +1,57 @@
+name: StreamingSetup
+ec2:
+  region: us-west-2
+  type: m3.medium
+cookbooks:
+  hadoop:
+    branch: master
+    github: karamel-lab/apache-hadoop-chef
+  spark:
+    branch: master
+    github: karamel-lab/spark-chef
+  flink:    
+    branch: master
+    github: karamel-lab/flink-chef
+attrs:
+  hadoop:
+    mr:
+      user: ubuntu
+    yarn:
+      user: ubuntu
+    version: 2.7.1
+  hdfs:
+    user: ubuntu
+  spark:
+    user: ubuntu
+    driver_memory: 8192m
+    executor_memory: 30g
+  flink:
+    user: ubuntu
+    mode: streaming
+    jobmanager:
+      heap_mbs: '8192'
+    taskmanager:
+      heap_mbs: '307200'
+groups:
+  namenodes:
+    size: 1
+    ec2:
+      region: us-west-2
+      type: m3.xlarge
+      price: 0.05  
+    recipes:
+    - hadoop::nn
+    - hadoop::rm
+    - spark::master
+    - flink::jobmanagerstreaming
+  datanodes:
+    size: 1
+    ec2:
+      region: us-west-2
+      type: r2.2xlarge
+      price: 0.05
+    recipes:
+    - hadoop::nm
+    - hadoop::dn
+    - flink::taskmanager
+    - spark::worker
