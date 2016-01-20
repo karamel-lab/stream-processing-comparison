@@ -53,3 +53,33 @@ jobmanager:
       heap_mbs: '307200'
 ```
 For a fair comparison, you can allocate the same amount of memory for Spark driver_memory and Flink jobmanager. And similarly for Spark executor_memory and Flink taskmanager.
+
+
+###Step 2 : Run Yahoo streaming experiment**
+--------------
+Definition file: [yahoo-streamingbench.yml](https://github.com/karamel-lab/stream-processing-comparison/blob/master/yahoo-streamingbench.yml)
+
+This experiment generates a data stream and run Spark and Flink streaming jobs to process the generated data stream.
+
+####Configuration changes
+
+* IP to deploy the experiment (***required****)
+
+You should add the public IP address of your master node in [the line](https://github.com/karamel-lab/stream-processing-comparison/blob/master/yahoo-streamingbench.yml#L20) for configuring ```ips:```
+```
+ips:
+      - 54.203.56.51
+```
+
+* Streaming Load
+
+This is the number of messages per second to send to be processed and can be configured with this [configuration](https://github.com/karamel-lab/stream-processing-comparison/blob/master/yahoo-streamingbench.yml#L15)
+```
+attrs:
+  streamingExperiment:
+    ....
+    load: '5000'
+```
+``` load: '5000'``` sends 5000 messages per second to Kafka for generating the data stream.
+
+
