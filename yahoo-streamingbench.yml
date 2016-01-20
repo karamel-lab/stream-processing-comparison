@@ -17,7 +17,7 @@ groups:
     size: 1
     baremetal:
       ips:
-      - 54.185.136.141
+      - 54.185.243.235
       sudoPassword: ''
     recipes:
     - streamingExperiment::experiment
