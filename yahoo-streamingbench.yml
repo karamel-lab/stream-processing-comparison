@@ -12,6 +12,10 @@ attrs:
   streamingExperiment:
     user: ubuntu
     group: ubuntu
+    load: 5000
+  spark:
+    master:
+      url: spark://54.203.56.51:7077
 groups:
   datanodes:
     size: 1
