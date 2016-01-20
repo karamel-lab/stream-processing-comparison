@@ -65,7 +65,7 @@ This experiment generates a data stream and run Spark and Flink streaming jobs t
 
 * IP to deploy the experiment (***required****)
 
-You should add the public IP address of your master node in [the line](https://github.com/karamel-lab/stream-processing-comparison/blob/master/yahoo-streamingbench.yml#L20) for configuring ```ips:```
+You should add the public IP address of your master node in [the line](https://github.com/karamel-lab/stream-processing-comparison/blob/master/yahoo-streamingbench.yml#L24) for configuring ```ips:```
 ```
 ips:
       - 54.203.56.51
