@@ -71,6 +71,15 @@ ips:
       - 54.203.56.51
 ```
 
+* Spark master URL (***required****)
+ This is the Spark master URL deployed by the [cluster-deployment.yml](https://github.com/karamel-lab/stream-processing-comparison/blob/master/cluster-deployment.yml)
+```
+  spark:
+    master:
+      url: spark://54.203.56.51:7077
+ ```
+If no mannual changes were done for ports, you can just edit the IP address of [this paremeter](https://github.com/karamel-lab/stream-processing-comparison/blob/master/yahoo-streamingbench.yml#L18) keeping other parts the same. Add the ***private IP*** of your master node for this configuration. This is because the communication within the cluster will happen using private IPs.
+
 * Streaming Load
 
 This is the number of messages per second to send to be processed and can be configured with this [configuration](https://github.com/karamel-lab/stream-processing-comparison/blob/master/yahoo-streamingbench.yml#L15)
