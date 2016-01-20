@@ -25,6 +25,5 @@ groups:
       sudoPassword: ''
     recipes:
     - streamingExperiment::experiment
-    - streamingExperiment::setup
     - streamingExperiment::testFlink
     - streamingExperiment::testSpark
