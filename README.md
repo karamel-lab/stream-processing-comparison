@@ -26,10 +26,10 @@ ec2:
 You can override the machine type, region for different node groups.
 ```
 datanodes:
-    size: 2
+    size: 1
     ec2:
       region: us-west-2
-      type: i2.4xlarge
+      type: r3.2xlarge
       price: 0.5
 ```
 * Size and bid for spot instances
