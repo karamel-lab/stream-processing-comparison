@@ -55,7 +55,7 @@ jobmanager:
 For a fair comparison, you can allocate the same amount of memory for Spark driver_memory and Flink jobmanager. And similarly for Spark executor_memory and Flink taskmanager.
 
 
-###Step 2 : Run Yahoo streaming experiment**
+###Step 2 : Run Yahoo streaming experiment
 --------------
 Definition file: [yahoo-streamingbench.yml](https://github.com/karamel-lab/stream-processing-comparison/blob/master/yahoo-streamingbench.yml)
 
@@ -91,4 +91,5 @@ attrs:
 ```
 ``` load: '5000'``` sends 5000 messages per second to Kafka for generating the data stream.
 
+You can use the [collectl-monitoring tool](https://github.com/shelan/collectl-monitoring) to monitor the system level performance of these big data engines while executing the TeraSort experiment. Collectl-monitor should be started before you are running the experiment and should be stopped once the experiment is over. You can visit [here](https://github.com/shelan/collectl-monitoring#example-scenario) for an example scenario described for a quick look.
 
