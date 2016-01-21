@@ -4,7 +4,7 @@ This project includes all the Karamel definition files which are required to do 
 
 ###Step 1 : Deploy the cluster in cloud
 --------------
-Definition file : [cluster-deployment.yml]()
+Definition file : [cluster-deployment.yml](https://github.com/karamel-lab/stream-processing-comparison/blob/master/cluster-deployment.yml)
 
 Above definition file will deploy the following clusters.
 
